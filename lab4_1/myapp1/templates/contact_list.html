@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact List</title>
+</head>
+<body>
+    <h1>List of Contacts</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Profession</th>
+                <th>Profession2</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.User_id }}</td> <!-- Assuming id is the primary key -->
+                    <td>{{ contact.name }}</td>
+                    <td>{{ contact.address }}</td>
+                    <td>{{ contact.profession }}</td>
+                    <td>{{ contact.profession2 }}</td>
+                    <td>{{ contact.Phone_Number }}</td>
+                    <td>{{ contact.email }}</td>
+                    <td>
+                        <form method="post" action="{% url 'delete' contact.User_id %}">
+                            {% csrf_token %}
+                            <input type="submit" value="Delete">
+                        </form>
+                        <a href="{%url 'update_contact' contact.User_id%}"><input type="submit" value="Update"></a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="8">No contacts available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{%url 'index'%}">
+    <button>Homepage</button>
+</a>
+</body>
+</html>

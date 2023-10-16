@@ -1,0 +1,45 @@
+<form method='POST'>
+    <table>
+        {% csrf_token %}
+        <tr>
+            <td>
+                <input type="number" name="User_id" placeholder="ID ">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="" placeholder="Name" name="name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="" placeholder="Address" name="address">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="" placeholder="Profession" name="profession">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="" placeholder="Profession 2" name="profession2">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" placeholder="Phone Number" name="Phone_Number">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="email" placeholder="Email" name="email">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
