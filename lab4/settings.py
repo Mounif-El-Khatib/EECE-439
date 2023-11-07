@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '*', 'CLwebapp1.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://clwebapp1.azurewebsites.net']
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
